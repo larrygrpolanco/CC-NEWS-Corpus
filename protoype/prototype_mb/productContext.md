@@ -13,6 +13,16 @@ This document provides context for the prototype development process, explaining
 ## Project Progress
 The project has made significant progress in developing modular components for CC-NEWS data processing. The WARC file processor is functional, and a parser for Washington Post articles has been implemented. These components are designed to be reusable and adaptable for other publishers.
 
+## Directory Structure
+The project data is now organized into the following structure:
+- data/
+  - cc-index/
+    - cc-index.paths
+    - cluster.idx
+  - warc-files/
+    - washington_post_article_content.warc
+    - washington_post_article.warc.gz
+
 ## Future Directions
 1. Validate the accuracy of the extracted data.
 2. Expand parser development to other major news publishers.
