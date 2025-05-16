@@ -1,3 +1,5 @@
+https://medium.com/@samuel.schaffhauser/using-the-common-crawl-as-a-data-source-693a41b3baa9
+
 Get the Common Crawl Data
 The common crawl runs monthly over a full run of the public-facing internet.
 The crawl is a valuable endovear and a nice feature of it is that it collects a huge collection of URLs.
