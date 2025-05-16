@@ -1,19 +1,20 @@
 # Washington Post Processing Notes
 
 ## Findings
-- No Washington Post articles were found in the January 2025 Common Crawl data (CC-MAIN-2025-05)
-- Attempted to filter cluster.idx for Washington Post politics URLs, but found no results
+- Successfully processed Washington Post articles from a downloaded WARC file 2020
+- Developed and tested a customized parser for Washington Post articles
+- The parser correctly extracts article text and metadata
 
 ## Attempts
-1. Downloaded collinfo.json to identify relevant crawl collection (CC-MAIN-2025-05)
-2. Downloaded cc-index.paths.gz and decompressed it
-3. Downloaded cluster.idx from CC-MAIN-2025-05
-4. Ran `grep` on cluster.idx to filter for Washington Post politics URLs
-
-## Next Steps
-- Try processing data from other news sources or timeframes
-- Consider checking if Washington Post allows crawling in their robots.txt
+1. Downloaded a WARC file containing Washington Post articles
+2. Developed a customized parser for Washington Post articles using BeautifulSoup
+3. Tested the parser on the downloaded WARC file
 
 ## Lessons Learned
-- Importance of checking multiple sources and timeframes
-- Usefulness of documenting attempts and findings for future troubleshooting
+- Importance of developing publisher-specific parsers for accurate data extraction
+- Value of testing parsers on real data to ensure correctness
+
+## Next Steps
+- Validate the accuracy of the extracted data for Washington Post articles
+- Expand parser development to other major news publishers (e.g., Reuters, AP)
+- Consider implementing performance benchmarking for the WARC processing pipeline
