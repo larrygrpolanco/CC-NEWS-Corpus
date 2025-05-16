@@ -1,0 +1,88 @@
+Get the Common Crawl Data
+The common crawl runs monthly over a full run of the public-facing internet.
+The crawl is a valuable endovear and a nice feature of it is that it collects a huge collection of URLs.
+
+To get some of the data to your drive do the following two steps:
+
+1. Get an overview over the currently available collections at http://index.commoncrawl.org/. An alternative way is to fetch the list of all available monthly collections from http://index.commoncrawl.org/collinfo.json.
+
+2. Download index cc-index.path.gz files for your crawl of interest. For example:
+https://data.commoncrawl.org/crawl-data/CC-MAIN-2022-05/cc-index.paths.gz
+Decompress the index file. To download the listed cdx-files add the prefix
+https://data.commoncrawl.org/ to the path.
+
+head cc-index.paths
+ cc-index/collections/CC-MAIN-2022–05/indexes/cdx-00000.gz
+ cc-index/collections/CC-MAIN-2022–05/indexes/cdx-00001.gz
+ cc-index/collections/CC-MAIN-2022–05/indexes/cdx-00002.gz
+ …
+ cc-index/collections/CC-MAIN-2022–05/indexes/cdx-00299.gz
+ cc-index/collections/CC-MAIN-2022–05/indexes/cluster.idx
+ cc-index/collections/CC-MAIN-2022–05/metadata.yaml
+Bear in mind that one compressed cdx-file is around 800 MB, decompressed it is around 5 GB.
+
+Search is filtering by relevance. Therefore, download only those files which you need. By the time of this writing There are 300 cdx-files, leading to 240 GB of compressed or 1.5 TB of decompressed data. How to filter and select your data is next.
+
+Filter by Top-Level Domain
+Let’s assume you are interested in all urls of the top-level domain .ch.
+This translates to knowing which cdx-files contain urls from the .ch domain and creating a set of all the host names for the top-level domain.
+
+The blocks are sorted by SURT URL and the index cluster.idx contains the first line of each block. This allows you to search and locate the block for a given URL.
+
+So a line from a random block is space separated and looks like this. Starting with the SURT URL, followed by a timestamp and the json that points to the archived url.
+
+ch,fiff)/index.php/en/fiff-fribourg-centre 20220128081725
+{
+ “url”: “https://www.fiff.ch/index.php", 
+ “mime”: “text/html”, 
+ “mime-detected”: “text/html”, 
+ “status”: “200”, 
+ “digest”: “PYRDPJU…”, 
+ “length”: “15249”, 
+ “offset”: “793909258”, 
+ “filename”: “crawl-data/CC-MAIN-2022–05/segments/…92/warc/CC-MAIN-…-.warc.gz”, 
+ “charset”: “UTF-8”, 
+ “languages”: “eng,fra”
+}
+The SURT URL is the reversed domain from top to sub and separated with the closing bracket from the path. For example:
+
+ch,fiff)/index.php/en/fiff-fribourg-centre
+
+Gets decoded as URL:
+
+fiff.ch/index.php/en/fiff-fribourg-centre
+
+This setup allows us to filter by the starting characters of each line for our top-domain of interest.
+
+$ grep ‘^ch,’ cluster.idx | cut -f2 | uniq
+cdx-00018.gz
+cdx-00019.gz
+cdx-00020.gz
+Download only those files.
+
+for i in $(grep ‘^ch,’ cluster.idx | cut -f2 | uniq)
+do
+    wget “https://data.commoncrawl.org/cc-index/collections/CC-MAIN-2022-05/indexes/$i.gz"
+done
+The following Python script does the counting. It can be extended to do more complicated things with the records.
+
+import gzip
+import json
+from pathlib import Path
+from collections import Counter
+from tqdm import tqdm
+domains = Counter()
+for gzip_file in Path().glob(‘cdx-*’):
+    with gzip.open(gzip_file,”rt”) as gzipped:
+        for i, line in tqdm(enumerate(gzipped)):
+            surl, timestamp, raw_json = line.split(‘ ‘, 2)
+            data = json.loads(raw_json)
+            domains[surl.split(‘)’)[0]] += 1
+print(len([i for i in domains.keys() if i.startswith(‘ch,’)]))
+## 437,794
+Fact Check
+Comparing the 437,794 .ch domains based on the common crawl to the official inventory of 2,467,461 in 2021 from the domain holder shows that there is a big gap.
+
+For example ch,decarb’ in domains.keys() returns False but by May 2022 if you browse to the web page at https://www.decarb.ch you see that the page is under construction. So it is possible to find a url wich is not visited by the common crawler. An explanation attempt for the difference could be the configuration in the robots.txt file of the web page which disalows the CCBot.
+
+If you have further ideas for the difference please leave them in the comments.
