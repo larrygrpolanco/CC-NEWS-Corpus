@@ -1,0 +1,218 @@
+{
+  "total_sources": 89,
+  "sources_checked": 89,
+  "crawls_checked": [
+    "CC-MAIN-2025-18",
+    "CC-MAIN-2025-13",
+    "CC-MAIN-2025-08",
+    "CC-MAIN-2025-04"
+  ],
+  "timestamp": "20250517_150049",
+  "availability_by_crawl": {
+    "CC-MAIN-2025-18": {
+      "available_count": 50,
+      "percentage": 56.17977528089888
+    },
+    "CC-MAIN-2025-13": {
+      "available_count": 53,
+      "percentage": 59.55056179775281
+    },
+    "CC-MAIN-2025-08": {
+      "available_count": 50,
+      "percentage": 56.17977528089888
+    },
+    "CC-MAIN-2025-04": {
+      "available_count": 0,
+      "percentage": 0.0
+    }
+  },
+  "availability_by_type": {
+    "Academic Platform": {
+      "total_count": 7,
+      "available_count": 4,
+      "percentage": 57.14285714285714
+    },
+    "Regional Focus": {
+      "total_count": 11,
+      "available_count": 6,
+      "percentage": 54.54545454545454
+    },
+    "Think Tank": {
+      "total_count": 17,
+      "available_count": 15,
+      "percentage": 88.23529411764706
+    },
+    "Policy Journal": {
+      "total_count": 9,
+      "available_count": 4,
+      "percentage": 44.44444444444444
+    },
+    "Independent Analysis": {
+      "total_count": 7,
+      "available_count": 6,
+      "percentage": 85.71428571428571
+    },
+    "NGO": {
+      "total_count": 8,
+      "available_count": 6,
+      "percentage": 75.0
+    },
+    "News Magazine": {
+      "total_count": 8,
+      "available_count": 5,
+      "percentage": 62.5
+    },
+    "IGO": {
+      "total_count": 6,
+      "available_count": 5,
+      "percentage": 83.33333333333334
+    },
+    "Political Commentary": {
+      "total_count": 16,
+      "available_count": 9,
+      "percentage": 56.25
+    }
+  },
+  "top_available_sources": [
+    {
+      "domain": "csis.org",
+      "name": "Center for Strategic and International Studies",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "carnegieendowment.org",
+      "name": "Carnegie Endowment for International Peace",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "cfr.org",
+      "name": "Council on Foreign Relations",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "cato.org",
+      "name": "Cato Institute",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "brookings.edu",
+      "name": "Brookings Institution",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "americanprogress.org",
+      "name": "Center for American Progress",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "iiss.org",
+      "name": "International Institute for Strategic Studies",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "chathamhouse.org",
+      "name": "Chatham House",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "sipri.org",
+      "name": "Stockholm International Peace Research Institute",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "ifri.org",
+      "name": "French Institute of International Relations",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "ecfr.eu",
+      "name": "European Council on Foreign Relations",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "lowyinstitute.org",
+      "name": "Lowy Institute",
+      "type": "Think Tank",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "thediplomat.com",
+      "name": "The Diplomat",
+      "type": "Policy Journal",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "justsecurity.org",
+      "name": "Just Security",
+      "type": "Policy Journal",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "warontherocks.com",
+      "name": "War on the Rocks",
+      "type": "Policy Journal",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "newrepublic.com",
+      "name": "The New Republic",
+      "type": "News Magazine",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "nationalreview.com",
+      "name": "National Review",
+      "type": "News Magazine",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "thenation.com",
+      "name": "The Nation",
+      "type": "News Magazine",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "un.org",
+      "name": "United Nations",
+      "type": "IGO",
+      "availability_score": 0.75,
+      "has_articles": false
+    },
+    {
+      "domain": "motherjones.com",
+      "name": "Mother Jones",
+      "type": "News Magazine",
+      "availability_score": 0.75,
+      "has_articles": false
+    }
+  ]
+}
