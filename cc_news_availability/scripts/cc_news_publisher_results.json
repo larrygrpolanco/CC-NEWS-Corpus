@@ -1,0 +1,418 @@
+{
+  "Wall Street Journal": [
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2017/01 samples",
+      "year": 2017,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2017/07 samples",
+      "year": 2017,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2018/01 samples",
+      "year": 2018,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2018/07 samples",
+      "year": 2018,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2019/01 samples",
+      "year": 2019,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2019/07 samples",
+      "year": 2019,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2020/01 samples",
+      "year": 2020,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2020/07 samples",
+      "year": 2020,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2021/01 samples",
+      "year": 2021,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2021/07 samples",
+      "year": 2021,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2022/01 samples",
+      "year": 2022,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2022/07 samples",
+      "year": 2022,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2023/01 samples",
+      "year": 2023,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2023/07 samples",
+      "year": 2023,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2024/01 samples",
+      "year": 2024,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2024/07 samples",
+      "year": 2024,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Wall Street Journal politics URLs found in 2024/12 samples",
+      "year": 2024,
+      "month": 12
+    }
+  ],
+  "New York Times": [
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2017/01 samples",
+      "year": 2017,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2017/07 samples",
+      "year": 2017,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2018/01 samples",
+      "year": 2018,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2018/07 samples",
+      "year": 2018,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2019/01 samples",
+      "year": 2019,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2019/07 samples",
+      "year": 2019,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2020/01 samples",
+      "year": 2020,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2020/07 samples",
+      "year": 2020,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2021/01 samples",
+      "year": 2021,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2021/07 samples",
+      "year": 2021,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2022/01 samples",
+      "year": 2022,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2022/07 samples",
+      "year": 2022,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2023/01 samples",
+      "year": 2023,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2023/07 samples",
+      "year": 2023,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2024/01 samples",
+      "year": 2024,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2024/07 samples",
+      "year": 2024,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No New York Times politics URLs found in 2024/12 samples",
+      "year": 2024,
+      "month": 12
+    }
+  ],
+  "Washington Post": [
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2017/01 samples",
+      "year": 2017,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2017/07 samples",
+      "year": 2017,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2018/01 samples",
+      "year": 2018,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2018/07 samples",
+      "year": 2018,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2019/01 samples",
+      "year": 2019,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2019/07 samples",
+      "year": 2019,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2020/01 samples",
+      "year": 2020,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2020/07 samples",
+      "year": 2020,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2021/01 samples",
+      "year": 2021,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2021/07 samples",
+      "year": 2021,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2022/01 samples",
+      "year": 2022,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2022/07 samples",
+      "year": 2022,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2023/01 samples",
+      "year": 2023,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2023/07 samples",
+      "year": 2023,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2024/01 samples",
+      "year": 2024,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2024/07 samples",
+      "year": 2024,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No Washington Post politics URLs found in 2024/12 samples",
+      "year": 2024,
+      "month": 12
+    }
+  ],
+  "USA Today": [
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2017/01 samples",
+      "year": 2017,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2017/07 samples",
+      "year": 2017,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2018/01 samples",
+      "year": 2018,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2018/07 samples",
+      "year": 2018,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2019/01 samples",
+      "year": 2019,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2019/07 samples",
+      "year": 2019,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2020/01 samples",
+      "year": 2020,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2020/07 samples",
+      "year": 2020,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2021/01 samples",
+      "year": 2021,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2021/07 samples",
+      "year": 2021,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2022/01 samples",
+      "year": 2022,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2022/07 samples",
+      "year": 2022,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2023/01 samples",
+      "year": 2023,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2023/07 samples",
+      "year": 2023,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2024/01 samples",
+      "year": 2024,
+      "month": 1
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2024/07 samples",
+      "year": 2024,
+      "month": 7
+    },
+    {
+      "available": false,
+      "message": "No USA Today politics URLs found in 2024/12 samples",
+      "year": 2024,
+      "month": 12
+    }
+  ]
+}
