@@ -1,4 +1,4 @@
 # CC-NEWS-Corpus
 
 ## Project Overview
-This project involves processing CC-NEWS data using WARC files and developing publisher-specific parsers.
+This project involves processing CC-MAIN data using WARC files and developing publisher-specific parsers.

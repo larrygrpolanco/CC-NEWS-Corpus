@@ -1,0 +1,55 @@
+Notes on brookings.edu website structure
+
+Root site: www.brookings.edu/
+
+All article routes: www.brookings.edu/articles/*
+
+Articles urls follow kebab case e.g., https://www.brookings.edu/articles/the-impact-of-us-tariffs-on-north-american-auto-manufacturing-and-implications-for-usmca/
+
+What I have gathered from the website structure so far:
+Articles can be of a few types eit 
+- Resaerch 
+- Commentary
+- Commentary Podcast
+
+There is some descrepency in formatting I cannot find the pattern yet
+- Sometimes bullet summaries are given for the article
+- Formatting of the article itself can vary slightly
+My guess is that there is some freedom given to the authors or it is connected to the topic.
+
+There is a place in the HTML with topic data e.g.,
+
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"Are America\u2019s alliances a source of strength or a burden as it competes with China?","archived":"No","author":"Brian Blankenship, Doug Bandow, Emilie Kimball, Mireya Sol\u00eds, Patricia M. Kim, Ryan Hass, Thomas Wright","author_id":"32681, 32680, 22356, 29167, 28544, 28702, 1314","author_type":"Guest Author, Guest Author, Staff, Expert, Expert, Expert, Expert","language":"en","word_count":3535,"historical_url":"","original_post_id":1819203,"post_id":1819203,"parent":null,"publish_date":"2025-05-15","type":"","content_type":"Commentary","format":"","subtype":"","primary_topic":"China","topic":"International Affairs, U.S. Foreign Policy","region":"Asia & the Pacific, China","program":"Foreign Policy","project":"Global China Project","center":"John L. Thornton China Center","tags":"","tag_id":"","template":"","monthPublished":"05","timePublished":"09:51:44","yearPublished":"2025","canonicalContent":"https:\/\/www.brookings.edu\/articles\/are-americas-alliances-a-source-of-strength-or-a-burden-as-it-competes-with-china\/"};
+
+This data will be vital for keeping clear records on the corpus and for running analysis
+
+Some of this information can be found in text form on the page for example every page has a More On section linking to related topic pages, however this brookings.dataLayer is gold
+
+Here is another one for more reference
+
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"How DOGE is using AI in government | The TechTank Podcast","archived":"No","author":"Darrell M. West","author_id":"29143","author_type":"Expert","language":"en","word_count":4507,"historical_url":"","original_post_id":1814547,"post_id":1814547,"parent":null,"publish_date":"2025-04-21","type":"Podcast","content_type":"Commentary","format":"","subtype":"","primary_topic":"Artificial Intelligence","topic":"Artificial Intelligence, Business & Workforce, Corporations, Cybersecurity, Government Reform, Privacy, Regulatory Policy, Technology & Information, Technology Policy & Regulation, U.S. Democracy, U.S. Economy, U.S. Government & Politics","region":"North America, U.S. States and Territories","program":"Governance Studies","project":"","center":"Center for Technology Innovation (CTI)","tags":"TechTank, The TechTank Podcast","tag_id":"2365, 24924","template":"","monthPublished":"04","timePublished":"11:51:44","yearPublished":"2025","canonicalContent":"https:\/\/www.brookings.edu\/articles\/how-doge-is-using-ai-in-government-the-techtank-podcast\/"};
+
+
+Just for more reference here is the outerhtml and code before the brookings.datalayer
+<script>
+	window.dataLayer = window.dataLayer ||[];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('consent','default',{
+		'ad_storage':'denied',
+		'analytics_storage':'denied',
+		'ad_user_data':'denied',
+		'ad_personalization':'denied',
+		'personalization_storage':'denied',
+		'functionality_storage':'granted',
+		'security_storage':'granted',
+		'wait_for_update': 500
+	});
+	gtag("set", "ads_data_redaction", true);
+</script>
+<script src="https://cmp.osano.com/16CY1DUX9sNbY3wXk/aff9cc08-c2dc-4e4d-862b-bfc6fb4f9403/osano.js"></script>
+<script>
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"How Chicago\u2019s civic and philanthropic leaders have catalyzed inclusive, tech-driven economic growth","archived":"No","author":"Mayu Takeuchi, Owen Washburn","author_id":"31206, 2230","author_type":"Staff, Guest Author","language":"en","word_count":2778,"historical_url":"","original_post_id":1815452,"post_id":1815452,"parent":null,"publish_date":"2025-05-14","type":"","content_type":"Research","format":"","subtype":"","primary_topic":"Cities & Communities","topic":"Business & Workforce, Cities & Communities, Economic Development, Placemaking, Technology & Information, Workforce Development","region":"","program":"Brookings Metro","project":"","center":"","tags":"","tag_id":"","template":"","monthPublished":"05","timePublished":"13:34:11","yearPublished":"2025","canonicalContent":"https:\/\/www.brookings.edu\/articles\/how-chicagos-civic-and-philanthropic-leaders-have-catalyzed-inclusive-tech-driven-economic-growth\/"};
+</script>
