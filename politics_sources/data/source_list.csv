@@ -1,0 +1,90 @@
+domain,name,type,political_leaning,geographic_focus,primary_topics
+brookings.edu,Brookings Institution,Think Tank,Center-Left,Global,Foreign Policy;Governance;Economics
+cfr.org,Council on Foreign Relations,Think Tank,Centrist,Global,Foreign Policy;Security;Trade
+rand.org,RAND Corporation,Think Tank,Centrist,Global,Security;Policy Analysis;Defense
+csis.org,Center for Strategic and International Studies,Think Tank,Centrist,Global,Security;Defense;Regional Studies
+carnegieendowment.org,Carnegie Endowment for International Peace,Think Tank,Center-Left,Global,International Relations;Democracy;Regional Studies
+heritage.org,Heritage Foundation,Think Tank,Conservative,US-focused,Governance;Economics;Defense
+cato.org,Cato Institute,Think Tank,Libertarian,US-focused,Economics;Civil Liberties;Foreign Policy
+wilsoncenter.org,Wilson Center,Think Tank,Centrist,Global,Regional Studies;Security;Governance
+aei.org,American Enterprise Institute,Think Tank,Conservative,US-focused,Economics;Defense;Social Policy
+americanprogress.org,Center for American Progress,Think Tank,Progressive,US-focused,Social Policy;Economics;Climate
+chathamhouse.org,Chatham House,Think Tank,Centrist,Global,International Relations;Security;Trade
+iiss.org,International Institute for Strategic Studies,Think Tank,Centrist,Global,Security;Defense;Conflict
+sipri.org,Stockholm International Peace Research Institute,Think Tank,Centrist,Global,Arms Control;Peace Research;Security
+ecfr.eu,European Council on Foreign Relations,Think Tank,Center-Left,Europe,European Politics;Foreign Policy;Security
+lowyinstitute.org,Lowy Institute,Think Tank,Centrist,Asia-Pacific,Asia-Pacific;Security;Trade
+swp-berlin.org,German Institute for International and Security Affairs,Think Tank,Centrist,Europe,European Politics;Security;Foreign Policy
+ifri.org,French Institute of International Relations,Think Tank,Centrist,Europe,European Politics;Security;International Relations
+foreignpolicy.com,Foreign Policy,Policy Journal,Center-Left,Global,Foreign Policy;Security;International Relations
+thediplomat.com,The Diplomat,Policy Journal,Centrist,Asia-Pacific,Asia-Pacific;Security;Diplomacy
+project-syndicate.org,Project Syndicate,Policy Journal,Center-Left,Global,Economics;International Relations;Governance
+foreignaffairs.com,Foreign Affairs,Policy Journal,Centrist,Global,Foreign Policy;International Relations;Security
+worldpoliticsreview.com,World Politics Review,Policy Journal,Centrist,Global,International Relations;Security;Regional Studies
+nationalinterest.org,The National Interest,Policy Journal,Center-Right,Global,Foreign Policy;Security;International Relations
+warontherocks.com,War on the Rocks,Policy Journal,Centrist,Global,Security;Defense;Military Affairs
+lawfareblog.com,Lawfare,Policy Journal,Centrist,Global,National Security;Law;Intelligence
+justsecurity.org,Just Security,Policy Journal,Center-Left,Global,National Security;Human Rights;International Law
+economist.com,The Economist,News Magazine,Center-Right,Global,Economics;International Relations;Politics
+theatlantic.com,The Atlantic,News Magazine,Center-Left,Global,Politics;Culture;International Relations
+slate.com,Slate,News Magazine,Progressive,US-focused,Politics;Culture;Social Issues
+vox.com,Vox,News Magazine,Progressive,US-focused,Politics;Policy;Social Issues
+newrepublic.com,The New Republic,News Magazine,Progressive,US-focused,Politics;Culture;Social Issues
+thenation.com,The Nation,News Magazine,Progressive,US-focused,Politics;Social Justice;International Relations
+motherjones.com,Mother Jones,News Magazine,Progressive,US-focused,Politics;Environment;Social Justice
+nationalreview.com,National Review,News Magazine,Conservative,US-focused,Politics;Culture;Foreign Policy
+crisisgroup.org,International Crisis Group,NGO,Centrist,Global,Conflict Prevention;Peace;Security
+un.org,United Nations,IGO,Centrist,Global,International Relations;Development;Human Rights
+eeas.europa.eu,European Union External Action Service,IGO,Centrist,Europe,European Politics;Foreign Policy;Security
+osce.org,Organization for Security and Co-operation in Europe,IGO,Centrist,Europe,Security;Human Rights;Conflict Prevention
+nato.int,NATO,IGO,Centrist,Transatlantic,Security;Defense;International Relations
+blogs.worldbank.org,World Bank Blogs,IGO,Centrist,Global,Development;Economics;Governance
+imf.org,International Monetary Fund,IGO,Centrist,Global,Economics;Finance;Development
+hrw.org,Human Rights Watch,NGO,Progressive,Global,Human Rights;Justice;Governance
+amnesty.org,Amnesty International,NGO,Progressive,Global,Human Rights;Justice;Refugees
+rescue.org,International Rescue Committee,NGO,Progressive,Global,Humanitarian Aid;Refugees;Development
+transparency.org,Transparency International,NGO,Centrist,Global,Corruption;Governance;Accountability
+freedomhouse.org,Freedom House,NGO,Center-Left,Global,Democracy;Human Rights;Civil Liberties
+oxfam.org,Oxfam,NGO,Progressive,Global,Development;Poverty;Human Rights
+refugeesinternational.org,Refugees International,NGO,Progressive,Global,Refugees;Humanitarian Aid;Human Rights
+thehill.com,The Hill,Political Commentary,Centrist,US-focused,US Politics;Congress;White House
+politico.com,Politico,Political Commentary,Centrist,US-focused,US Politics;Elections;Policy
+realclearpolitics.com,RealClearPolitics,Political Commentary,Centrist,US-focused,US Politics;Elections;Polling
+fivethirtyeight.com,FiveThirtyEight,Political Commentary,Center-Left,US-focused,Elections;Polling;Data Analysis
+axios.com,Axios,Political Commentary,Centrist,US-focused,US Politics;Business;Technology
+thebulwark.com,The Bulwark,Political Commentary,Center-Right,US-focused,US Politics;Foreign Policy;Culture
+theamericanconservative.com,The American Conservative,Political Commentary,Conservative,US-focused,US Politics;Foreign Policy;Culture
+prospect.org,The American Prospect,Political Commentary,Progressive,US-focused,US Politics;Economics;Social Policy
+jacobinmag.com,Jacobin,Political Commentary,Socialist,US-focused,Politics;Economics;Labor
+politico.eu,Politico EU,Political Commentary,Centrist,Europe,European Politics;EU Institutions;Policy
+euobserver.com,EU Observer,Political Commentary,Centrist,Europe,European Politics;EU Institutions;Policy
+al-monitor.com,Al-Monitor,Political Commentary,Centrist,Middle East,Middle East Politics;Security;Diplomacy
+middleeasteye.net,Middle East Eye,Political Commentary,Center-Left,Middle East,Middle East Politics;Human Rights;Security
+asiatimes.com,Asia Times,Political Commentary,Centrist,Asia-Pacific,Asia-Pacific;China;Security
+theafricareport.com,Africa Report,Political Commentary,Centrist,Africa,African Politics;Economics;Security
+opendemocracy.net,openDemocracy,Political Commentary,Progressive,Global,Democracy;Human Rights;Civil Society
+theconversation.com,The Conversation,Academic Platform,Center-Left,Global,Politics;Science;Society
+e-ir.info,E-International Relations,Academic Platform,Centrist,Global,International Relations;Security;Theory
+oxfordresearchgroup.org.uk,Oxford Research Group,Academic Platform,Center-Left,Global,Security;Peace;Conflict Resolution
+daily.jstor.org,JSTOR Daily,Academic Platform,Centrist,Global,Politics;History;Society
+papers.ssrn.com,Social Science Research Network,Academic Platform,Centrist,Global,Law;Economics;Political Science
+blog.cambridge.org,Cambridge Core Blog,Academic Platform,Centrist,Global,Politics;International Relations;History
+blogs.lse.ac.uk,LSE Blogs,Academic Platform,Center-Left,Global,Politics;Economics;International Relations
+eastasiaforum.org,East Asia Forum,Regional Focus,Centrist,Asia-Pacific,Asia-Pacific;Economics;Security
+scmp.com,South China Morning Post,Regional Focus,Centrist,Asia-Pacific,China;Hong Kong;Asia-Pacific
+asia.nikkei.com,Nikkei Asia,Regional Focus,Centrist,Asia-Pacific,Japan;Asia-Pacific;Business
+mei.edu,Middle East Institute,Regional Focus,Centrist,Middle East,Middle East Politics;Security;Energy
+jadaliyya.com,Jadaliyya,Regional Focus,Progressive,Middle East,Middle East Politics;Culture;Society
+alaraby.co.uk,The New Arab,Regional Focus,Center-Left,Middle East,Middle East Politics;Culture;Society
+euractiv.com,Euractiv,Regional Focus,Centrist,Europe,European Politics;EU Policy;Business
+africanarguments.org,African Arguments,Regional Focus,Center-Left,Africa,African Politics;Development;Security
+issafrica.org,Institute for Security Studies,Regional Focus,Centrist,Africa,African Security;Governance;Crime
+allafrica.com,AllAfrica,Regional Focus,Centrist,Africa,African Politics;Business;Society
+mg.co.za/africa,Mail & Guardian Africa,Regional Focus,Center-Left,Africa,African Politics;Society;Environment
+bellingcat.com,Bellingcat,Independent Analysis,Center-Left,Global,Investigations;Conflict;Disinformation
+stratfor.com,Stratfor,Independent Analysis,Centrist,Global,Geopolitics;Security;Intelligence
+geopoliticalfutures.com,Geopolitical Futures,Independent Analysis,Centrist,Global,Geopolitics;Forecasting;Security
+theintercept.com,The Intercept,Independent Analysis,Progressive,Global,Investigations;Security;Civil Liberties
+propublica.org,ProPublica,Independent Analysis,Center-Left,US-focused,Investigations;Governance;Justice
+responsiblestatecraft.org,Responsible Statecraft,Independent Analysis,Center-Left,Global,Foreign Policy;Security;Diplomacy
+defenseone.com,Defense One,Independent Analysis,Centrist,US-focused,Defense;Security;Technology
