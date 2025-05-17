@@ -1,0 +1,23 @@
+[
+  {
+    "domain": "brookings.edu",
+    "available": false,
+    "root_page_count": 0,
+    "total_page_count": 0,
+    "sample_urls": []
+  },
+  {
+    "domain": "csis.org",
+    "available": false,
+    "root_page_count": 0,
+    "total_page_count": 0,
+    "sample_urls": []
+  },
+  {
+    "domain": "carnegieendowment.org",
+    "available": false,
+    "root_page_count": 0,
+    "total_page_count": 0,
+    "sample_urls": []
+  }
+]

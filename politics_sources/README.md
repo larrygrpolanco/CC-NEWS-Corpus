@@ -14,11 +14,10 @@ politics_sources/
 │   ├── check_availability.py    # Main script to check source availability
 │   ├── analyze_results.py       # Analyze and summarize results
 │   ├── fetch_sample_content.py  # Fetch sample content from available sources
-│   ├── test_cc_api.py           # Test script for Common Crawl API utilities
-│   ├── test_html_analyzer.py    # Test script for HTML analyzer utilities
+│   ├── test_availability.py     # Test script for availability checking
 │   ├── README.md                # Documentation for scripts
 │   └── utils/
-│       ├── cc_api.py            # Common Crawl API utilities
+│       ├── cc_api.py            # Common Crawl API utilities using cdx-toolkit
 │       └── html_analyzer.py     # Analyze HTML structure of samples
 ├── reports/
 │   ├── availability_report.md   # Final report on source availability (generated)
@@ -60,15 +59,52 @@ See [research_considerations.md](reports/research_considerations.md) for a detai
 
 ## Usage
 
-1. Test the setup with the test scripts:
+### Prerequisites
+
+1. Install the required dependencies:
    ```
-   python scripts/test_cc_api.py
-   python scripts/test_html_analyzer.py
+   pip install -r requirements.txt
    ```
 
-2. Run the main scripts in sequence:
-   ```
-   python scripts/check_availability.py
-   python scripts/fetch_sample_content.py --results-file data/availability_results/availability_results_YYYYMMDD_HHMMSS.json
-   python scripts/analyze_results.py --availability-file data/availability_results/availability_results_YYYYMMDD_HHMMSS.json --sample-file data/sample_content/sample_analysis_YYYYMMDD_HHMMSS.json
-   ```
+2. Make sure you have the source list CSV file in the `data/` directory.
+
+### Checking Source Availability
+
+```bash
+# Check availability in the most recent crawl (default)
+python scripts/check_availability.py
+
+# Check availability in a specific crawl
+python scripts/check_availability.py --crawls CC-MAIN-2025-18
+
+# Test with a limited number of sources
+python scripts/check_availability.py --limit 5
+```
+
+The script will generate:
+- A JSON file with detailed results
+- A CSV file with the same results in a tabular format
+- A JSON file with summary statistics
+- A log file with detailed logging information
+
+### Understanding the Results
+
+The availability check provides the following information for each source:
+
+- **available**: Whether the domain is available in the crawl
+- **root_page_count**: Number of pages at the root domain (e.g., example.com)
+- **total_page_count**: Number of pages under the domain (e.g., example.com/*)
+- **sample_urls**: Sample URLs from the domain that were found in the crawl
+
+The total_page_count is the most important metric, as it shows how many pages from that domain are actually available in Common Crawl. A higher count means more content is available for your corpus.
+
+## Implementation Notes
+
+This project uses cdx-toolkit, a specialized library for working with CDX indices from web crawls and archives, including CommonCrawl. It offers several advantages:
+
+1. **Built-in politeness**: The library is designed to be "polite to CDX servers by being single-threaded and serial."
+2. **Unified index access**: It "knits together the monthly Common Crawl CDX indices into a single, virtual index."
+3. **Proper pagination**: It automatically handles the paged interface for efficient access to large sets of URLs.
+4. **Robust error handling**: As a dedicated library, it has better error handling for the specific quirks of the CDX API.
+
+For more information about cdx-toolkit, see the [documentation](https://github.com/cocrawler/cdx_toolkit).

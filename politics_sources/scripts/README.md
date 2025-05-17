@@ -16,37 +16,49 @@ pip install -r ../requirements.txt
 
 ### 1. Check Availability
 
-The `check_availability.py` script checks the availability of sources in Common Crawl.
+The `check_availability.py` script checks the availability of sources in Common Crawl using cdx-toolkit.
 
 ```bash
-python check_availability.py --source-list ../data/source_list.csv --output-dir ../data/availability_results --max-workers 5 --crawls CC-MAIN-2025-18 CC-MAIN-2025-13 CC-MAIN-2025-08 CC-MAIN-2025-04
+# Check availability in the most recent crawl
+python check_availability.py
+
+# Check availability in a specific crawl
+python check_availability.py --crawls CC-MAIN-2025-18
+
+# Test with a limited number of sources
+python check_availability.py --limit 5
 ```
 
 Options:
 - `--source-list`: Path to the source list CSV file (default: `../data/source_list.csv`)
 - `--output-dir`: Directory to save results (default: `../data/availability_results`)
-- `--max-workers`: Maximum number of worker threads (default: 5)
-- `--crawls`: Specific crawl IDs to check (default: the 4 most recent crawls)
+- `--crawls`: Specific crawl ID to check (default: the most recent crawl)
 - `--limit`: Limit the number of sources to check (for testing)
 
 Output:
 - JSON file with detailed results
-- CSV file with flattened results
+- CSV file with results in tabular format
 - JSON file with summary statistics
 - Log file with detailed logging information
+
+The script provides information about page counts:
+
+- **root_page_count**: Number of pages at the root domain (e.g., example.com)
+- **total_page_count**: Number of pages under the domain (e.g., example.com/*)
+
+The total_page_count is the most important metric, as it shows how many pages from that domain are actually available in Common Crawl.
 
 ### 2. Fetch Sample Content
 
 The `fetch_sample_content.py` script fetches sample content from available sources.
 
 ```bash
-python fetch_sample_content.py --results-file ../data/availability_results/availability_results_YYYYMMDD_HHMMSS.json --output-dir ../data/sample_content --max-workers 3 --crawl-id CC-MAIN-2025-18 --min-score 0.5 --sample-count 3
+python fetch_sample_content.py --results-file ../data/availability_results/availability_results_YYYYMMDD_HHMMSS.json --output-dir ../data/sample_content --crawl-id CC-MAIN-2025-18 --min-score 0.5 --sample-count 3
 ```
 
 Options:
 - `--results-file`: Path to the availability results JSON file (required)
 - `--output-dir`: Directory to save sample content (default: `../data/sample_content`)
-- `--max-workers`: Maximum number of worker threads (default: 3)
 - `--crawl-id`: Crawl ID to fetch samples from (default: `CC-MAIN-2025-18`)
 - `--min-score`: Minimum availability score to consider a source (default: 0.5)
 - `--sample-count`: Number of samples to fetch per source (default: 3)
@@ -74,15 +86,24 @@ Options:
 Output:
 - Markdown file with comprehensive report
 
+### 4. Test Availability
+
+The `test_availability.py` script is a simplified version of the check_availability.py script that tests the availability of a few domains.
+
+```bash
+python test_availability.py
+```
+
+This script is useful for testing the cdx-toolkit implementation with a small number of domains.
+
 ## Utility Modules
 
 ### cc_api.py
 
-This module provides utilities for interacting with the Common Crawl API, including:
-- Querying the CDX API for domains
+This module provides utilities for interacting with the Common Crawl API using cdx-toolkit, including:
 - Checking domain availability in crawls
-- Fetching WARC records
 - Getting sample articles
+- Fetching WARC records
 
 ### html_analyzer.py
 
@@ -113,13 +134,13 @@ python fetch_sample_content.py --results-file ../data/availability_results/avail
 python analyze_results.py --availability-file ../data/availability_results/availability_results_YYYYMMDD_HHMMSS.json --sample-file ../data/sample_content/sample_analysis_YYYYMMDD_HHMMSS.json
 ```
 
-## Testing
+## Implementation Notes
 
-To test the scripts with a limited number of sources, use the `--limit` option:
+This project uses cdx-toolkit, a specialized library for working with CDX indices from web crawls and archives, including CommonCrawl. It offers several advantages:
 
-```bash
-python check_availability.py --limit 5
-python fetch_sample_content.py --results-file ../data/availability_results/availability_results_YYYYMMDD_HHMMSS.json --limit 3
-```
+1. **Built-in politeness**: The library is designed to be "polite to CDX servers by being single-threaded and serial."
+2. **Unified index access**: It "knits together the monthly Common Crawl CDX indices into a single, virtual index."
+3. **Proper pagination**: It automatically handles the paged interface for efficient access to large sets of URLs.
+4. **Robust error handling**: As a dedicated library, it has better error handling for the specific quirks of the CDX API.
 
-This will process only a small number of sources, which is useful for testing the scripts before running them on the full dataset.
+For more information about cdx-toolkit, see the [documentation](https://github.com/cocrawler/cdx_toolkit).
