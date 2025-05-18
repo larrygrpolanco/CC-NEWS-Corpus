@@ -2,39 +2,21 @@
 
 ## Current Work Focus
 
-- Efficient, local extraction of all Brookings Institution articles from CC-MAIN-2025-18 using index files.
-- Validation of the extraction pipeline by building a small pilot corpus (5-10 articles) and cross-checking metadata and text with the live website.
-- Preparation for metadata table creation and robust parser development.
+- Slow, chunked, and polite extraction of all Brookings Institution articles as raw HTML from Common Crawl WARC files, using a robust, resumable, and well-documented workflow.
+- All planning, validation, and script setup is complete; the project is now in the data collection phase.
 
 ## Recent Changes
 
-- Switched from brute-force cdx scanning to targeted extraction using cluster.idx, reducing downloads from 300+ cdx files to just one (cdx-00173.gz).
-- Automated the download and filtering of cdx-00173.gz for Brookings articles using a Python-only workflow.
-- Saved all Brookings article index matches to brookings_corpus/cdx_work/brookings_cdx_matches.txt (14,692 matches).
-- Established a clean, modular directory structure and memory bank for documentation.
+- Decided against AWS Athena/cloud extraction due to already having all WARC locations from the CDX.
+- Developed and documented a script (`html_extractor.py`) for polite, chunked extraction of HTML, with user-configurable throttling and robust logging.
+- Established a single-folder organization for all raw HTML (`html_raw/`), with each file named by its digest for easy mapping to the master CSV.
+- Created a concise README for future reference and reproducibility.
 
 ## Next Steps
 
-1. **Sample Validation:**
-   - Select a small sample (5-10) of Brookings article index lines from brookings_cdx_matches.txt.
-   - For each, extract WARC filename, offset, and length.
-   - Download the corresponding WARC segment and extract the HTML.
-   - Parse brookings.dataLayer and main text from the HTML.
-   - Cross-check metadata and text with the live website for accuracy.
-
-2. **Corpus Metadata Table:**
-   - Design and implement a standardized metadata table (CSV/DB) with all required fields.
-   - Validate parser output against ground truth and document any edge cases.
-
-3. **Pilot Corpus Creation:**
-   - Build a small, validated corpus of 5-10 articles with both metadata and cleaned text.
-   - Document the extraction and validation process.
-
-4. **Unit Testing:**
-   - Develop unit tests for the parser using real HTML samples and expected outputs.
-
-5. **Documentation:**
-   - Update README and memory bank with schema, workflow, and validation results.
+- Manually run the extraction script on each chunked CSV, monitoring logs and adjusting throttle as needed to avoid rate-limiting.
+- Continue until all HTML files are collected.
+- The next major update will be after HTML extraction is complete, or if issues arise during extraction.
 
 ## Active Decisions & Considerations
 

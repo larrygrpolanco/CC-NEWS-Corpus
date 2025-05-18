@@ -1,0 +1,95 @@
+https://commoncrawl.org/blog/index-to-warc-files-and-urls-in-columnar-format
+
+March 1, 2018
+Index to WARC Files and URLs in Columnar Format
+We're happy to announce the release of an index to WARC files and URLs in a columnar format. The columnar format (we use Apache Parquet) allows to efficiently query or process the index and saves time and computing resources. Especially, if only few columns are accessed, recent big data tools will run impressively fast.
+Sebastian Nagel
+Sebastian Nagel
+Sebastian is a Distinguished Engineer with Common Crawl.
+
+We're happy to announce the release of an index to WARC files and URLs in a columnar format. The columnar format (we use Apache Parquet) allows to efficiently query or process the index and saves time and computing resources. Especially, if only few columns are accessed, recent big data tools will run impressively fast. So far, we've tested two of them: Apache Spark and AWS Athena. The latter makes it possible to run SQL queries on the columnar data even without launching a server. Below you'll find examples how to query the data with Athena. Examples and instructions for SparkSQL are in preparation. But you are free to use any other tool: the columnar index is free to access or download for anybody. You'll find all files on: s3://commoncrawl/cc-index/table/cc-main/warc/
+
+Running SQL Queries with Athena
+AWS Athena is a serverless service to analyze data on S3 using SQL. With Presto under the hood you even get a long list of extra functions including lambda expressions. Usage of Athena is not free but it has an attractive price model, you pay only for the scanned data (currently $5.0 per TiB). The index table of a single monthly crawl has about 300 GB. That defines the upper bound, but most queries require only part of the data to be scanned.
+
+Let's start and register the Common Crawl index as database table in Athena:
+
+1. open the Athena query editor. Make sure you're in the us-east-1 region where all the Common Crawl data is located. You need an AWS account to access Athena, please follow the AWS Athena user guide how to register and set up Athena.
+
+2. to create a database (here called "ccindex") enter the command
+
+CREATE DATABASE ccindex
+and press "Run query"
+
+3. make sure that the database "ccindex" is selected and proceed with "New Query"
+
+4. create the table by executing the following SQL statement:
+
+CREATE EXTERNAL TABLE IF NOT EXISTS ccindex (
+  url_surtkey                   STRING,
+  url                           STRING,
+  url_host_name                 STRING,
+  url_host_tld                  STRING,
+  url_host_2nd_last_part        STRING,
+  url_host_3rd_last_part        STRING,
+  url_host_4th_last_part        STRING,
+  url_host_5th_last_part        STRING,
+  url_host_registry_suffix      STRING,
+  url_host_registered_domain    STRING,
+  url_host_private_suffix       STRING,
+  url_host_private_domain       STRING,
+  url_protocol                  STRING,
+  url_port                      INT,
+  url_path                      STRING,
+  url_query                     STRING,
+  fetch_time                    TIMESTAMP,
+  fetch_status                  SMALLINT,
+  content_digest                STRING,
+  content_mime_type             STRING,
+  content_mime_detected         STRING,
+  content_charset               STRING,
+  content_languages             STRING,
+  warc_filename                 STRING,
+  warc_record_offset            INT,
+  warc_record_length            INT,
+  warc_segment                  STRING)
+PARTITIONED BY (
+  crawl                         STRING,
+  subset                        STRING)
+STORED AS parquet
+LOCATION 's3://commoncrawl/cc-index/table/cc-main/warc/';
+It will create a table "ccindex" with a schema that fits the data on S3. The two "PARTITIONED BY" columns are actually subdirectories, one for every monthly crawl and the WARC subset. Partitions allow us to update the table every month and also help to limit the costs to query the data. Please note that the table schema may evolve over time, the most recent schema version is available on github.
+
+5. to make Athena recognize the data partitions on S3, you have to execute the SQL statement:
+
+MSCK REPAIR TABLE ccindex
+Note that this command is also necessary to make newer crawls appear in the table. Every month we'll add a new partition (a "directory", e.g., crawl=CC-MAIN-2018-09/).
+
+The new partition is not visible and searchable unless it has been discovered by the repair table command. If you run the command you'll see which partitions have been newly discovered, e.g:
+
+Repair: Added partition to metastore ccindex:crawl=CC-MAIN-2018-09/subset=crawldiagnostics
+Repair: Added partition to metastore ccindex:crawl=CC-MAIN-2018-09/subset=robotstxt
+Repair: Added partition to metastore ccindex:crawl=CC-MAIN-2018-09/subset=warc
+Now you’re ready to run the first query. We’ll count the number of pages per domain within a single top-level domain. As before press “Run query” after you’ve entered the query into the query editor frame:
+
+SELECT COUNT(*) AS count,
+       url_host_registered_domain
+FROM "ccindex"."ccindex"
+WHERE crawl = 'CC-MAIN-2018-05'
+  AND subset = 'warc'
+  AND url_host_tld = 'no'
+GROUP BY  url_host_registered_domain
+HAVING (COUNT(*) >= 100)
+ORDER BY  count DESC
+The result appears seconds later and only 2.12 MB of data have been scanned! Pretty fine, the query has cost less than one cent. We've filtered the data by a partition (a monthly crawl) and selected a small (.no) top-level domain. It's a good practice to start developing more complex queries with such filters applied to keep the costs for trials low.
+
+
+But let's continue with a second example which demonstrates the power of Presto functions - we try to find domains which provide multi-lingual content. On possible way is to look for ISO-639-1 language codes in the URL, e.g., en in https://example.com/about/en/page.html. You can find the full SQL expression on github. For demonstration purposes we restrict the search to a single and small TLD (.va for Vatican State). The magic is done by:
+
+UNNEST(regexp_extract_all(url_path, '(?<=/)(?:[a-z][a-z])(?=/)')) AS t (url_path_lang)
+which first extracts all two-letter path elements (e.g., /en/) and unrolls the elements into a new column "url_path_lang" (if two or more path elements are found, you get multiple rows). Now we count pages and unique languages and let Presto/Athena also create a histogram of language codes:
+
+
+You can find more SQL examples and resources on the cc-index-table project page on github. We'll also working to provide examples to process the table using SparkSQL. First experiments are also promising: you get results within minutes even on a small Spark cluster. That's not seconds as for Athena but you're more flexible, esp. regarding the output format - Athena supports only CSV. Please also check the Athena release notes and the current list of limitations to find out which Presto version is used and which functions are supported.
+
+We hope the new data format will help you to get value from the Common Crawl archives, in addition to the existing services.
