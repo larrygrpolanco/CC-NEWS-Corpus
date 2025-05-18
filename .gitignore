@@ -178,4 +178,4 @@ cython_debug/
 *.gz
 *.warc
 *.idx
-html_raw/
+html_raw/*.html
