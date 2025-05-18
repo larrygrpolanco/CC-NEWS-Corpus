@@ -1,0 +1,18 @@
+Read the @/CC_docs/ and your memory to get an idea of this research project. I want to focus on just getting working infomation and and filtering some files for preliminary analysis and further steps.
+
+
+I want to work with @/brookings_corpus/cdx_work/brookings_cdx_matches_truncated.txt 
+There is a lot of good information in the metadata already which I will need for my research paper. For example I can report how many brookings article webpages were scrapped total from common crawl april 2025 n = 14,693. I can report how many of those we used for our corpus sample. For example how many of them are "languages": "eng" and which had a "status": "200" and which had a 404 which cannot be accessed. I can extract this information easily. What I need from you is help creating a script to turn @/brookings_corpus/cdx_work/brookings_cdx_matches_truncated.txt   a csv file with all the important relevant information. avalible and easy to see and run analysis. the csv file will be for my own records. Then I need a seperate sample file which has all the working webpages for which fit this corpus so that when it comes to start processing and pulling webpages/creating the warc I know exactly the sites I need to pull. I am not 100 sure how the warc and webpage collection process works.
+
+
+I have realized that 301 status URLs are still "working URLs" so they should be included in if they have a working redirect. So maybe a better process is to just filter out 404s? There is just one stutus 502 URL everything else is either 200, 404, 301, or 302
+Reviewing the list. I noticet that 301 redirects to another brookings article and 302 redirects outside of brookings so 301 should be considered working and 302 as not. This is a brookings webpage article corpus.
+
+
+Include all of the fields for the csv file so that we lose no data. This file will essentially be what I use to analyze basic descriptive data for selecting my sample for the corpus "Of all the webpages collected by common crawl following the URL brookings.edu/articles/* X% were..." 
+
+Finding duplicates is particularly important for generating an accurate corpus. I do not think that there will be duplicates, but we should be thorough
+
+I will do the counting myelf keep it simple
+
+Do not remove duplicates, but make sure to have a column for marking duplicates so that it can be handled later. I want to keep the raw meta data mostly untoched i just need it in a workable csv format for preliminary analysis for research reporting and deciding furhter steps
