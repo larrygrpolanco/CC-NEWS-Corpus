@@ -2,32 +2,34 @@
 
 ## Current Work Focus
 
-- Slow, chunked, and polite extraction of all Brookings Institution articles as raw HTML from Common Crawl WARC files, using a robust, resumable, and well-documented workflow.
-- All planning, validation, and script setup is complete; the project is now in the data collection phase.
+- High-speed extraction of all Brookings Institution articles as raw HTML from Common Crawl WARC files, using a robust, resumable, and well-documented workflow.
+- Extraction is now performed on AWS EC2 in us-east-1, accessing WARC data directly from S3 for maximum speed and reliability.
+- The project is in the large-scale data collection phase, leveraging the new cloud-based workflow.
 
 ## Recent Changes
 
-- Decided against AWS Athena/cloud extraction due to already having all WARC locations from the CDX.
-- Developed and documented a script (`html_extractor.py`) for polite, chunked extraction of HTML, with user-configurable throttling and robust logging.
-- Established a single-folder organization for all raw HTML (`html_raw/`), with each file named by its digest for easy mapping to the master CSV.
-- Created a concise README for future reference and reproducibility.
+- Migrated extraction workflow from local, throttled HTTPS downloads to cloud-based, unthrottled S3 access on EC2.
+- Developed and documented a new script (`html_extractor_s3.py`) for S3-based extraction using boto3.
+- Created a beginner-friendly EC2 setup guide (`EC2_guide.md`) to support reproducibility and ease of use.
+- Updated documentation and memory bank to reflect the new workflow and technical decisions.
 
 ## Next Steps
 
-- Manually run the extraction script on each chunked CSV, monitoring logs and adjusting throttle as needed to avoid rate-limiting.
-- Continue until all HTML files are collected.
-- The next major update will be after HTML extraction is complete, or if issues arise during extraction.
+- Run the S3-based extraction script on EC2 to collect all HTML files for Brookings articles.
+- Download the resulting HTML files to local storage for further processing.
+- Begin development and validation of the metadata and text parser for brookings.dataLayer and main content.
+- Assemble and validate a pilot corpus, then scale up to the full dataset.
+- Continue updating documentation and memory bank as the project progresses.
 
 ## Active Decisions & Considerations
 
-- **Index targeting:** Always use cluster.idx to minimize unnecessary downloads.
-- **Python-only processing:** Avoid shell tools for maximum portability and reproducibility.
+- **Cloud-first extraction:** Use EC2 in us-east-1 and S3 for all large-scale WARC extraction tasks.
+- **Python-only processing:** Maintain portability and reproducibility by using Python for all core steps.
 - **Validation-first:** Prioritize manual and automated validation before scaling up.
-- **Documentation:** Maintain up-to-date memory bank and code comments for future work.
+- **Documentation:** Keep memory bank and code comments up to date for future work.
 
 ## Important Patterns & Learnings
 
-- Using cluster.idx for index targeting is critical for efficiency.
-- Local, modular, and version-controlled workflows are essential for reproducibility.
-- Manual spot-checking and unit tests are necessary to ensure extraction accuracy.
-- All code, configuration, and documentation should be kept in sync and under version control.
+- Cloud-based extraction (EC2 + S3) is dramatically faster and more reliable for large-scale Common Crawl work.
+- Modular, version-controlled workflows and clear documentation are essential for reproducibility.
+- Manual spot-checking and unit tests remain critical for ensuring extraction and parsing accuracy.
