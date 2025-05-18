@@ -172,7 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Added by the author
 *.paths
 *.gz
 *.warc
 *.idx
+html_raw/
