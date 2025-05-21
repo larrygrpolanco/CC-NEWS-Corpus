@@ -1,4 +1,4 @@
-# Step 1: Extraction – Brookings Institution Corpus
+# Step 1: Identification – Brookings Institution Corpus
 
 This folder contains everything needed to extract all Brookings Institution articles from the April 2025 Common Crawl (CC-MAIN-2025-18) for research or reproducibility.
 
@@ -6,7 +6,7 @@ This folder contains everything needed to extract all Brookings Institution arti
 
 ## **Purpose**
 
-Efficiently identify and extract all Brookings articles from Common Crawl using local index files, minimizing downloads and avoiding rate limits. This step produces a list of all Brookings article records and prepares for WARC/HTML extraction.
+Efficiently identify all Brookings articles from Common Crawl using local index files, minimizing downloads and avoiding rate limits. This step produces a list of all Brookings article records and prepares for the next step: downloading WARC segments and extracting HTML.
 
 ---
 
