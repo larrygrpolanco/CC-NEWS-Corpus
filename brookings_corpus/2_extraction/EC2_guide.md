@@ -1,43 +1,47 @@
-# Beginner's Guide: Extracting Common Crawl HTML on AWS EC2 (us-east-1)
+# Step-by-Step Guide: Extracting Brookings HTML from Common Crawl on AWS EC2 (us-east-1)
 
-This guide will walk you through running your HTML extraction script on an AWS EC2 instance in the same region as Common Crawl's data, for fast, reliable, and unthrottled access.
+This guide is designed for users with minimal Linux experience. It uses the AWS Console (web GUI) wherever possible and provides clear, copy-paste commands for the few required terminal steps. You will extract HTML files from Common Crawl and transfer them to your computer or Google Drive.
 
 ---
 
-## 1. Create an AWS Account
+## 1. Create an AWS Account (if you don't have one)
 
 - Go to [https://aws.amazon.com/](https://aws.amazon.com/) and sign up.
 - You will need a credit card (AWS has a free tier, but you may incur small charges for compute time and storage).
 
 ---
 
-## 2. Launch an EC2 Instance in us-east-1
+## 2. Launch an EC2 Instance in us-east-1 (N. Virginia)
 
-1. **Log in to the AWS Console:** [https://console.aws.amazon.com/](https://console.aws.amazon.com/)
-2. **Set region:** In the top right, select `N. Virginia (us-east-1)`.
-3. **Go to EC2:** Search for "EC2" in the services menu.
-4. **Launch Instance:**
-   - Click "Launch Instance".
-   - **Name:** e.g., `commoncrawl-html-extract`
-   - **Amazon Machine Image (AMI):** Choose "Ubuntu Server 22.04 LTS" (free tier eligible).
-   - **Instance type:** `t3.medium` (good balance of price/performance; free tier users can use `t2.micro` but it's slow).
-   - **Key pair:** Create a new key pair (RSA), download the `.pem` file, and keep it safe.
-   - **Network settings:** Allow SSH (port 22) from your IP.
-   - **Storage:** 30 GB is usually enough.
+**All steps below are done in the AWS Console (web browser):**
+
+1. Log in to the AWS Console: [https://console.aws.amazon.com/](https://console.aws.amazon.com/)
+2. Set region: In the top right, select `N. Virginia (us-east-1)`.
+3. Go to EC2: Search for "EC2" in the services menu.
+4. Click "Launch Instance".
+   - Name: `brookings-html-extract`
+   - Amazon Machine Image (AMI): **Ubuntu Server 22.04 LTS** (recommended for compatibility)
+   - Instance type: **t3.medium** (recommended; free tier users can use t2.micro but it will be slow)
+   - Key pair: Create a new key pair (RSA), download the `.pem` file, and keep it safe (you'll need it to connect).
+   - Network settings: Allow SSH (port 22) from your IP only (for security).
+   - Storage: 30 GB (default is fine).
    - Click "Launch Instance".
 
 ---
 
 ## 3. Connect to Your Instance
 
-- Find your instance in the EC2 dashboard.
-- Click "Connect" and follow the SSH instructions.
-- Example (from your terminal, replace `KEY.pem` and `ec2-XX-XX-XX-XX.compute-1.amazonaws.com`):
+**You must use a terminal for this step.**
+
+- In the EC2 dashboard, select your instance and click "Connect" for instructions.
+- Example command (replace `KEY.pem` and `ec2-XX-XX-XX-XX.compute-1.amazonaws.com`):
 
   ```bash
   chmod 400 KEY.pem
   ssh -i KEY.pem ubuntu@ec2-XX-XX-XX-XX.compute-1.amazonaws.com
   ```
+
+- If you prefer a GUI, you can use [MobaXterm](https://mobaxterm.mobatek.net/) (Windows) or [Termius](https://termius.com/) (Mac/Win/Linux) for a graphical SSH client.
 
 ---
 
