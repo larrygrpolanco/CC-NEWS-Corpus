@@ -1,0 +1,21 @@
+This script was more helpful than I thought it found multiple files which are not articles themselves, but what looks like embeddings or links to articles
+
+Analyzing files in html_raw...
+No dataLayer found in html_raw/J26PWSWUQ7VATZQRMF46A6TE4653XDKG.html
+No dataLayer found in html_raw/GVZZEALPSMLSZX3R5CFPZ77NU6L73ECQ.html
+No dataLayer found in html_raw/KTLIXRGKFDSFGTQ4ULKU6SZKME42AC5Z.html
+No dataLayer found in html_raw/P3LQ3QXIYW7MD6EEMRHX7RMVFXKHAFTG.html
+No dataLayer found in html_raw/OEQFJPEXWTWGWXV64T2HKALSWXUBQSMP.html
+No dataLayer found in html_raw/3BNUJWQKIW7F3YPDYVO57USVPC7Q2XEH.html
+No dataLayer found in html_raw/SWRK56SIIM22DNPASKV7KX66CCIK5MSI.html
+No dataLayer found in html_raw/2JGJLFFYA2W26CSK4H62XUWNYJQN75MN.html
+No dataLayer found in html_raw/4MHCPQPLMF4ZOEZY2RKG7S4VZWFT3JSP.html
+No dataLayer found in html_raw/JZNQL6TFED4PCNQKTZFWFQZ3GPJVFD52.html
+No dataLayer found in html_raw/V5LH3UFIGKA5PZAJHDV2RY6Q4BPGRABR.html
+No dataLayer found in html_raw/SJFTENKKQ5PFJUEFAGGWM7HMDBDISQ43.html
+No dataLayer found in html_raw/7ILK6VUJLD2DKD4ZZJR2PNA3LB37XDJE.html
+No dataLayer found in html_raw/SCQQQ5P2O37HPQY5GW6VHH54TPJS5HMY.html
+No dataLayer found in html_raw/EYQMVCUCPCYXP4MJKQO7TIKAD32MVXA6.html
+No dataLayer found in html_raw/WW77SXJHNO6PTH6EXPTCA2FBHI64N47R.html
+No dataLayer found in html_raw/5RJ2PS232NZW4BSMQQTOLLNOI2SSXM2C.html
+Analysis complete. Report saved to brookings_corpus/data_analysis/preliminary/preliminary_report.md
