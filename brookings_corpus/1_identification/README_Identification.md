@@ -1,6 +1,6 @@
 # Step 1: Identification – Brookings Institution Corpus
 
-This folder contains everything needed to extract all Brookings Institution articles from the April 2025 Common Crawl (CC-MAIN-2025-18) for research or reproducibility.
+This folder contains everything needed to identify all Brookings Institution articles from the April 2025 Common Crawl (CC-MAIN-2025-18) for research or reproducibility.
 
 ---
 
