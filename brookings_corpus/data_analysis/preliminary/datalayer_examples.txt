@@ -1,0 +1,38 @@
+<script>
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"Insurers Aren\u2019t Banks: What the Difference Means for Regulating Their Solvency","archived":"No","author":"Robert E. Litan","author_id":"29260","author_type":"Expert","language":"en","word_count":862,"historical_url":"https:\/\/www.brookings.edu\/opinions\/12-insurers-arent-banks-regulating-solvency-litan\/","original_post_id":"19662","post_id":19662,"parent":null,"publish_date":"2014-08-12","type":"Op-ed","content_type":"Commentary","format":"","subtype":"","primary_topic":"Global Economy & Development","topic":"Global Economy & Development","region":"","program":"Economic Studies","project":"","center":"","tags":"","tag_id":"","template":"","monthPublished":"08","timePublished":"12:24:00","yearPublished":"2014","canonicalContent":"https:\/\/www.brookings.edu\/articles\/12-insurers-arent-banks-regulating-solvency-litan\/"};
+</script>
+
+<script>
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"11 Body Parts Researchers Will Use to Track You","archived":"No","author":"Noah Shachtman, Robert Beckhusen","author_id":"1260, 2229","author_type":"Guest Author, Guest Author","language":"en","word_count":3293,"historical_url":"https:\/\/www.brookings.edu\/opinions\/11-body-parts-researchers-will-use-to-track-you\/","original_post_id":"18192","post_id":18192,"parent":null,"publish_date":"2013-01-25","type":"Op-ed","content_type":"Commentary","format":"","subtype":"","primary_topic":"Technology & Information","topic":"Defense & Security, Technology & Information, U.S. Defense Policy","region":"","program":"Foreign Policy","project":"","center":"Strobe Talbott Center for Security, Strategy, and Technology","tags":"","tag_id":"","template":"","monthPublished":"01","timePublished":"11:19:00","yearPublished":"2013","canonicalContent":"https:\/\/www.brookings.edu\/articles\/11-body-parts-researchers-will-use-to-track-you\/"};
+</script>
+
+<script>
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"10 things we learned at Brookings in November","archived":"No","author":"Tamari Dzotsenidze","author_id":"22988","author_type":"Guest Author","language":"en","word_count":1059,"historical_url":"https:\/\/www.brookings.edu\/blog\/brookings-now\/2019\/12\/03\/10-things-we-learned-at-brookings-in-november-3\/","original_post_id":"629050","post_id":629050,"parent":null,"publish_date":"2019-12-03","type":"","content_type":"Commentary","format":"","subtype":"","primary_topic":null,"topic":"","region":"","program":"","project":"","center":"","tags":"Brookings Now","tag_id":"2373","template":"","monthPublished":"12","timePublished":"14:56:19","yearPublished":"2019","canonicalContent":"https:\/\/www.brookings.edu\/articles\/10-things-we-learned-at-brookings-in-november-3\/"};
+</script>
+
+
+<script>
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"11 foreign policy questions for the GOP candidates","archived":"No","author":"Anna Newby","author_id":"2425","author_type":"Guest Author","language":"en","word_count":809,"historical_url":"https:\/\/www.brookings.edu\/blog\/order-from-chaos\/2015\/09\/15\/11-foreign-policy-questions-for-the-gop-candidates\/","original_post_id":"60190","post_id":60190,"parent":null,"publish_date":"2015-09-15","type":"","content_type":"Commentary","format":"","subtype":"","primary_topic":"U.S. Government & Politics","topic":"Campaigns & Elections, International Affairs, U.S. Foreign Policy, U.S. Government & Politics","region":"","program":"","project":"","center":"","tags":"Foreign Policy in the U.S. Presidential Debates, Order from Chaos","tag_id":"4871, 2361","template":"","monthPublished":"09","timePublished":"08:00:00","yearPublished":"2015","canonicalContent":"https:\/\/www.brookings.edu\/articles\/11-foreign-policy-questions-for-the-gop-candidates\/"};
+</script>
+
+
+<script>
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"Politics or piety? Why the Muslim Brotherhood engages in social service provision: A conversation","archived":"No","author":"Amr Darrag, Steven Brooke","author_id":"10791, 1263","author_type":"Guest Author, Guest Author","language":"en","word_count":4953,"historical_url":"https:\/\/www.brookings.edu\/research\/politics-or-piety-why-the-muslim-brotherhood-engages-in-social-service-provision-a-conversation\/","original_post_id":"84801","post_id":84801,"parent":null,"publish_date":"2016-05-06","type":"","content_type":"Research","format":"","subtype":"","primary_topic":"Egypt","topic":"","region":"Egypt, Middle East & North Africa","program":"Foreign Policy","project":"U.S. Relations with the Islamic World","center":"Center for Middle East Policy","tags":"Islamist Movements, Islamists on Islamism today","tag_id":"97, 19261","template":"","monthPublished":"05","timePublished":"13:55:00","yearPublished":"2016","canonicalContent":"https:\/\/www.brookings.edu\/articles\/politics-or-piety-why-the-muslim-brotherhood-engages-in-social-service-provision-a-conversation\/"};
+</script>
+
+
+<script>
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"The state of the IRS","archived":"No","author":"Vanessa Williamson, Zach Benzaoui","author_id":"29154, 31790","author_type":"Expert, Guest Author","language":"en","word_count":838,"historical_url":"","original_post_id":1760340,"post_id":1760340,"parent":null,"publish_date":"2024-02-26","type":"","content_type":"Commentary","format":"","subtype":"","primary_topic":"U.S. Economy","topic":"Banking & Finance, Courts & Law, Crime, Justice & Safety, Political Parties, Society & Culture, U.S. Economy, U.S. Government & Politics","region":"North America, U.S. States and Territories","program":"Governance Studies","project":"Election '24: Issues at Stake","center":"Center for Effective Public Management (CEPM)","tags":"Election '24: Government spending, taxes & debt, FixGov","tag_id":"31708, 2367","template":"","monthPublished":"02","timePublished":"14:45:25","yearPublished":"2024","canonicalContent":"https:\/\/www.brookings.edu\/articles\/the-state-of-the-irs\/"};
+</script>
+
+
+<script>
+	var brookings = window.brookings || {};
+	brookings.dataLayer = {"title":"Hutchins Roundup:\u00a0Labor force participation,\u00a0total factor productivity, and more\u00a0","archived":"No","author":"David Wessel, Jimena Ruiz Castro, Lorena Hernandez Barcena, Nasiha Salwati","author_id":"29031, 25742, 23964, 25642","author_type":"Expert, Guest Author, Guest Author, ","language":"en","word_count":1103,"historical_url":"https:\/\/www.brookings.edu\/blog\/up-front\/2021\/08\/05\/hutchins-roundup-labor-force-participation-total-factor-productivity-and-more\/","original_post_id":"1472368","post_id":1472368,"parent":null,"publish_date":"2021-08-05","type":"","content_type":"Commentary","format":"","subtype":"","primary_topic":"U.S. Economy","topic":"U.S. Economy","region":"","program":"Economic Studies","project":"","center":"The Hutchins Center on Fiscal and Monetary Policy","tags":"The Hutchins Roundup, Up Front","tag_id":"5109, 2372","template":"","monthPublished":"08","timePublished":"11:00:50","yearPublished":"2021","canonicalContent":"https:\/\/www.brookings.edu\/articles\/hutchins-roundup-labor-force-participation-total-factor-productivity-and-more\/"};
+</script>

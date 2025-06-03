@@ -102,7 +102,7 @@ def generate_report(stats, output_file):
                 f.write(f"| {year} | {count} | {count/stats['processed_files']:.1%} |\n")
 
 if __name__ == "__main__":
-    input_dir = "html_raw"  # Relative to script location
+    input_dir = "html_raw_test"  # Relative to script location
     output_file = "brookings_corpus/data_analysis/preliminary/preliminary_report.md"  # Save in same directory as script
 
     print(f"Analyzing files in {input_dir}...")
