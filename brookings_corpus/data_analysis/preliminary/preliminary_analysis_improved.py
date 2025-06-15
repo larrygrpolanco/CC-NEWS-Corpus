@@ -42,6 +42,7 @@ def analyze_files(input_dir):
         'processed_files': 0,
         'missing_datalayer': 0,
         'word_counts': [],
+        'word_counts_by_content_type': defaultdict(list),
         'topics': defaultdict(int),
         'regions': defaultdict(int),
         'types': defaultdict(int),
@@ -51,7 +52,10 @@ def analyze_files(input_dir):
         'centers': defaultdict(int),
         'projects': defaultdict(int),
         'author_types': defaultdict(int),
+        'author_configs': defaultdict(int),  # Single Expert, Multiple Guests, etc.
         'years': defaultdict(int),
+        'months': defaultdict(int),
+        'archived': defaultdict(int),
         'data_quality': {
             'has_region': 0,
             'has_program': 0,
@@ -74,36 +78,6 @@ def analyze_files(input_dir):
                 
                 if data:
                     stats['processed_files'] += 1
-                    
-                    # Word count
-                    word_count = data.get('word_count')
-                    if word_count and isinstance(word_count, (int, float)):
-                        stats['word_counts'].append(int(word_count))
-                    
-                    # Topics
-                    primary_topic = clean_field(data.get('primary_topic'))
-                    if primary_topic:
-                        stats['topics'][primary_topic] += 1
-                        stats['data_quality']['has_primary_topic'] += 1
-                    else:
-                        stats['topics']['[No Primary Topic]'] += 1
-                    
-                    # Multiple topics from 'topic' field
-                    topic_field = clean_field(data.get('topic'))
-                    if topic_field:
-                        for topic in parse_multiple_values(topic_field):
-                            stats['topics'][f"Secondary: {topic}"] += 1
-                    
-                    # Regions - distinguish between missing and intentionally empty
-                    region_field = data.get('region')
-                    if region_field is None:
-                        stats['regions']['[Missing Data]'] += 1
-                    elif region_field == '':
-                        stats['regions']['[No Regional Focus]'] += 1
-                    else:
-                        stats['data_quality']['has_region'] += 1
-                        for region in parse_multiple_values(region_field):
-                            stats['regions'][region] += 1
                     
                     # Types and Content Types
                     article_type = clean_field(data.get('type'))
@@ -131,6 +105,67 @@ def analyze_files(input_dir):
                     else:
                         combined = "[Unclassified]"
                     stats['combined_types'][combined] += 1
+                    
+                    # Word count
+                    word_count = data.get('word_count')
+                    if word_count and isinstance(word_count, (int, float)):
+                        word_count_val = int(word_count)
+                        stats['word_counts'].append(word_count_val)
+                        
+                        # Track word count by content type
+                        if content_type:
+                            stats['word_counts_by_content_type'][content_type].append(word_count_val)
+                    
+                    # Author configuration
+                    author_types_str = clean_field(data.get('author_type'))
+                    if author_types_str:
+                        author_types = parse_multiple_values(author_types_str)
+                        num_authors = len(author_types)
+                        
+                        if num_authors == 1:
+                            stats['author_configs']['Single Author'] += 1
+                        elif num_authors > 1:
+                            if all('expert' in t.lower() for t in author_types):
+                                stats['author_configs']['Multiple Experts'] += 1
+                            elif all('guest' in t.lower() for t in author_types):
+                                stats['author_configs']['Multiple Guests'] += 1
+                            else:
+                                stats['author_configs']['Mixed Authors'] += 1
+                    
+                    # Archived status
+                    archived_status = data.get('archived', 'No')
+                    stats['archived'][archived_status] += 1
+                    
+                    # Month published
+                    month_published = data.get('monthPublished')
+                    if month_published and month_published.isdigit():
+                        stats['months'][month_published] += 1
+                    
+                    # Topics
+                    primary_topic = clean_field(data.get('primary_topic'))
+                    if primary_topic:
+                        stats['topics'][primary_topic] += 1
+                        stats['data_quality']['has_primary_topic'] += 1
+                    else:
+                        stats['topics']['[No Primary Topic]'] += 1
+                    
+                    # Multiple topics from 'topic' field
+                    topic_field = clean_field(data.get('topic'))
+                    if topic_field:
+                        for topic in parse_multiple_values(topic_field):
+                            stats['topics'][f"Secondary: {topic}"] += 1
+                    
+                    # Regions - distinguish between missing and intentionally empty
+                    region_field = data.get('region')
+                    if region_field is None:
+                        stats['regions']['[Missing Data]'] += 1
+                    elif region_field == '':
+                        stats['regions']['[No Regional Focus]'] += 1
+                    else:
+                        stats['data_quality']['has_region'] += 1
+                        for region in parse_multiple_values(region_field):
+                            stats['regions'][region] += 1
+                    
                     
                     # Institutional context
                     program = clean_field(data.get('program'))
@@ -266,18 +301,54 @@ def generate_enhanced_report(stats, output_file):
             if year != '[Unknown Year]' and year.isdigit():
                 f.write(f"| {year} | {count:,} | {count/total_processed:.1%} |\n")
         
-        # Research Insights
-        f.write("\n## Research Insights for Diachronic Analysis\n")
-        f.write("### Content Evolution Patterns\n")
-        commentary_count = stats['content_types'].get('Commentary', 0)
+        # Research Comparisons
+        f.write("\n## Comparative Analysis Framework\n")
+        
+        # Content Type Matrix
+        f.write("### Content Type Distribution\n")
         research_count = stats['content_types'].get('Research', 0)
-        f.write(f"- **Commentary vs Research ratio**: {commentary_count:,} Commentary ({commentary_count/total_processed:.1%}) vs {research_count:,} Research ({research_count/total_processed:.1%})\n")
+        commentary_count = stats['content_types'].get('Commentary', 0)
+        f.write(f"- **Research Articles**: {research_count:,} ({research_count/total_processed:.1%})\n")
+        f.write(f"- **Commentary Articles**: {commentary_count:,} ({commentary_count/total_processed:.1%})\n")
+        f.write(f"- **Research/Commentary Ratio**: {research_count/commentary_count if commentary_count else 0:.2f}:1\n\n")
         
-        regional_focus = stats['data_quality']['has_region']
-        f.write(f"- **Articles with regional focus**: {regional_focus:,} ({regional_focus/total_processed:.1%}) - suitable for geographic linguistic analysis\n")
+        # Author Configuration
+        f.write("### Author Configurations\n")
+        for config, count in sorted(stats['author_configs'].items(), key=lambda x: -x[1]):
+            f.write(f"- **{config}**: {count:,} ({count/total_processed:.1%})\n")
         
-        program_coverage = stats['data_quality']['has_program']
-        f.write(f"- **Articles with program assignment**: {program_coverage:,} ({program_coverage/total_processed:.1%}) - enables policy domain analysis\n")
+        # Temporal Analysis
+        f.write("\n### Publication Trends\n")
+        f.write("#### Monthly Distribution (2013-2025)\n")
+        f.write("| Month | Articles | Percentage |\n")
+        f.write("|-------|---------:|-----------:|\n")
+        for month, count in sorted(stats['months'].items()):
+            if month.isdigit():
+                f.write(f"| {month} | {count:,} | {count/total_processed:.1%} |\n")
+        
+        # Topic Analysis with minimum sample size
+        f.write("\n### Topic Coverage (Min 20 Articles)\n")
+        primary_topics = {k: v for k, v in stats['topics'].items() 
+                         if not k.startswith('Secondary:') and v >= 20}
+        for topic, count in sorted(primary_topics.items(), key=lambda x: -x[1]):
+            f.write(f"- **{topic}**: {count:,} articles\n")
+        
+        # Word Count Analysis
+        f.write("\n### Word Count by Content Type\n")
+        f.write("| Content Type | Average Words | Median Words |\n")
+        f.write("|--------------|--------------:|-------------:|\n")
+        for content_type, counts in stats['word_counts_by_content_type'].items():
+            if counts:
+                avg = statistics.mean(counts)
+                median = statistics.median(counts)
+                f.write(f"| {content_type} | {avg:.1f} | {median:.0f} |\n")
+        
+        # Archived Content
+        f.write("\n### Archived Content\n")
+        archived_count = stats['archived'].get('Yes', 0)
+        active_count = stats['archived'].get('No', 0)
+        f.write(f"- **Archived Articles**: {archived_count:,} ({archived_count/total_processed:.1%})\n")
+        f.write(f"- **Active Articles**: {active_count:,} ({active_count/total_processed:.1%})\n")
 
 if __name__ == "__main__":
     input_dir = "html_raw"  # Relative to script location

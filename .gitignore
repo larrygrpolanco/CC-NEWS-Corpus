@@ -179,3 +179,4 @@ cython_debug/
 *.warc
 *.idx
 html_raw/
+html_removed

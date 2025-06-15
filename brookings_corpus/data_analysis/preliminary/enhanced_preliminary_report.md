@@ -1,9 +1,9 @@
 # Brookings Corpus Enhanced Preliminary Analysis Report
 
 ## Overview
-- **Total HTML files processed**: 13,344
-- **Successfully parsed**: 13,327 (99.9%)
-- **Missing dataLayer**: 17 (0.1%)
+- **Total HTML files processed**: 13,327
+- **Successfully parsed**: 13,327 (100.0%)
+- **Missing dataLayer**: 0 (0.0%)
 
 ## Data Quality Assessment
 - **Articles with regional focus**: 5,405 (40.6%)
@@ -173,8 +173,117 @@
 | 2024 | 405 | 3.0% |
 | 2025 | 166 | 1.2% |
 
-## Research Insights for Diachronic Analysis
-### Content Evolution Patterns
-- **Commentary vs Research ratio**: 10,082 Commentary (75.7%) vs 3,245 Research (24.3%)
-- **Articles with regional focus**: 5,405 (40.6%) - suitable for geographic linguistic analysis
-- **Articles with program assignment**: 12,070 (90.6%) - enables policy domain analysis
+## Comparative Analysis Framework
+### Content Type Distribution
+- **Research Articles**: 3,245 (24.3%)
+- **Commentary Articles**: 10,082 (75.7%)
+- **Research/Commentary Ratio**: 0.32:1
+
+### Author Configurations
+- **Single Author**: 8,255 (61.9%)
+- **Mixed Authors**: 2,758 (20.7%)
+- **Multiple Guests**: 1,444 (10.8%)
+- **Multiple Experts**: 533 (4.0%)
+
+### Publication Trends
+#### Monthly Distribution (2013-2025)
+| Month | Articles | Percentage |
+|-------|---------:|-----------:|
+| 01 | 1,194 | 9.0% |
+| 02 | 1,120 | 8.4% |
+| 03 | 1,344 | 10.1% |
+| 04 | 1,143 | 8.6% |
+| 05 | 1,033 | 7.8% |
+| 06 | 1,180 | 8.9% |
+| 07 | 1,029 | 7.7% |
+| 08 | 812 | 6.1% |
+| 09 | 1,226 | 9.2% |
+| 10 | 1,100 | 8.3% |
+| 11 | 1,038 | 7.8% |
+| 12 | 1,108 | 8.3% |
+
+### Topic Coverage (Min 20 Articles)
+- **U.S. Government & Politics**: 1,646 articles
+- **U.S. Economy**: 1,290 articles
+- **Education**: 761 articles
+- **Cities & Communities**: 689 articles
+- **[No Primary Topic]**: 597 articles
+- **U.S. Foreign Policy**: 563 articles
+- **Technology & Information**: 527 articles
+- **Terrorism & Extremism**: 491 articles
+- **Climate Change**: 411 articles
+- **Global Economy & Development**: 400 articles
+- **Society & Culture**: 398 articles
+- **International Affairs**: 392 articles
+- **Health Care Policy**: 356 articles
+- **Emerging Markets & Developing Economies**: 284 articles
+- **Global Education**: 234 articles
+- **U.S. Defense Policy**: 204 articles
+- **Immigrants & Immigration**: 201 articles
+- **Global Trade**: 193 articles
+- **Workforce Development**: 184 articles
+- **Retirement**: 175 articles
+- **Development Financing**: 173 articles
+- **Defense & Security**: 156 articles
+- **India**: 137 articles
+- **Economic Security & Mobility**: 131 articles
+- **China**: 124 articles
+- **Asia & the Pacific**: 106 articles
+- **Iraq**: 95 articles
+- **Europe & Eurasia**: 94 articles
+- **Sub-Saharan Africa**: 76 articles
+- **Campaigns & Elections**: 68 articles
+- **Business & Workforce**: 66 articles
+- **Middle East & North Africa**: 65 articles
+- **Iran**: 63 articles
+- **Higher Education**: 62 articles
+- **Economic Development**: 62 articles
+- **Israel**: 58 articles
+- **Demographics & Population**: 53 articles
+- **European Union**: 52 articles
+- **North Korea**: 49 articles
+- **Infrastructure**: 49 articles
+- **Energy Industry**: 48 articles
+- **Artificial Intelligence**: 46 articles
+- **Race in Public Policy**: 45 articles
+- **Russia**: 45 articles
+- **Housing**: 42 articles
+- **Syria**: 41 articles
+- **Regulatory Policy**: 41 articles
+- **Egypt**: 40 articles
+- **Multilateral Development Organizations**: 38 articles
+- **Gulf States**: 38 articles
+- **Taiwan**: 38 articles
+- **Turkey**: 36 articles
+- **Public Health**: 36 articles
+- **Climate Disasters & Environment**: 33 articles
+- **Afghanistan**: 31 articles
+- **Federal Reserve**: 29 articles
+- **Labor & Unemployment**: 29 articles
+- **U.S. Democracy**: 28 articles
+- **Pakistan**: 28 articles
+- **Children & Families**: 27 articles
+- **Media & Journalism**: 27 articles
+- **Courts & Law**: 26 articles
+- **Saudi Arabia**: 25 articles
+- **Migrants, Refugees & Internally Displaced Persons**: 24 articles
+- **Internet & Telecommunications**: 24 articles
+- **International Financial Institutions**: 24 articles
+- **Mexico**: 23 articles
+- **Ukraine**: 23 articles
+- **Crime, Justice & Safety**: 21 articles
+- **Health Access & Equity**: 20 articles
+- **Federal Fiscal & Tax Policy**: 20 articles
+- **Latin America & the Caribbean**: 20 articles
+- **Early Childhood Education**: 20 articles
+- **K-12 Education**: 20 articles
+
+### Word Count by Content Type
+| Content Type | Average Words | Median Words |
+|--------------|--------------:|-------------:|
+| Research | 1410.1 | 752 |
+| Commentary | 1161.4 | 962 |
+
+### Archived Content
+- **Archived Articles**: 7 (0.1%)
+- **Active Articles**: 13,320 (99.9%)

@@ -19,3 +19,6 @@ No dataLayer found in html_raw/EYQMVCUCPCYXP4MJKQO7TIKAD32MVXA6.html
 No dataLayer found in html_raw/WW77SXJHNO6PTH6EXPTCA2FBHI64N47R.html
 No dataLayer found in html_raw/5RJ2PS232NZW4BSMQQTOLLNOI2SSXM2C.html
 Analysis complete. Report saved to brookings_corpus/data_analysis/preliminary/preliminary_report.md
+
+
+These have been deleted.
